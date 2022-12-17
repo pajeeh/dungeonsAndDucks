@@ -1,0 +1,2 @@
+// => Tempos = [dia, tarde, noite]
+
