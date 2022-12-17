@@ -1,9 +1,10 @@
-import 'grasnarSilencioso.dart';
-import 'pato.dart';
-import 'semVoar.dart';
+
+import '../../models/Pato.dart';
+import '../atributosPatos/grasnarSilencioso.dart';
+import '../atributosPatos/semVoar.dart';
 
 class RubberDuck extends Pato {
-  RubberDuck() {
+  RubberDuck() : super('', 0) {
     vooBehavior = VooSemAsas();
     grasnarBehavior = GrasnarSilencioso();
   }

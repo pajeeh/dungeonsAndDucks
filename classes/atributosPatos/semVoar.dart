@@ -1,4 +1,4 @@
-import 'vooBehavior.dart';
+import '../behaviors/VooBehavior.dart';
 
 class VooSemAsas implements VooBehavior {
   void voar() {

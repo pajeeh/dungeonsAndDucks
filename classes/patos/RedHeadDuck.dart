@@ -1,9 +1,9 @@
-import 'grasnarAlto.dart';
-import 'pato.dart';
-import 'vooComAsas.dart';
+import '../../models/Pato.dart';
+import '../atributosPatos/grasnarAlto.dart';
+import '../atributosPatos/vooComAsas.dart';
 
 class RedHeadDuck extends Pato {
-  RedHeadDuck() {
+  RedHeadDuck() : super('', 0) {
     vooBehavior = VooComAsas();
     grasnarBehavior = GrasnarAlto();
   }

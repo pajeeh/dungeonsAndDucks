@@ -1,9 +1,11 @@
-import 'grasnarNormal.dart';
-import 'pato.dart';
-import 'vooComAsas.dart';
+
+
+import '../../models/Pato.dart';
+import '../atributosPatos/grasnarNormal.dart';
+import '../atributosPatos/vooComAsas.dart';
 
 class MallardDuck extends Pato {
-  MallardDuck() {
+  MallardDuck() : super('', 0) {
     vooBehavior = VooComAsas();
     grasnarBehavior = GrasnarNormal();
   }

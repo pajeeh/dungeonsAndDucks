@@ -1,9 +1,11 @@
-import 'GrasnarBehavior.dart';
-import 'vooBehavior.dart';
+import '../classes/behaviors/GrasnarBehavior.dart';
+import '../classes/behaviors/VooBehavior.dart';
 
 abstract class Pato {
   late VooBehavior vooBehavior;
   late GrasnarBehavior grasnarBehavior;
+
+  Pato(String s, int i);
 
   void exibir();
   void voar() {

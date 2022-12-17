@@ -1,4 +1,4 @@
-import 'GrasnarBehavior.dart';
+import '../behaviors/GrasnarBehavior.dart';
 
 class GrasnarSilencioso implements GrasnarBehavior {
   void grasnar() {

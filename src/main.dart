@@ -1,28 +1,49 @@
-import '../models/classes/MallardDuck.dart';
-import '../models/classes/RedHeadDuck.dart';
-import '../models/classes/RubberDuck.dart';
-import '../models/classes/WoodDuck.dart';
-import '../models/classes/pato.dart';
-
 /* 
 Ponto de partida
 Simulador de patos....
 */
 
-void main() {
-  List<Pato> patos = [];
-  patos.add(MallardDuck());
-  patos.add(RubberDuck());
-  patos.add(RedHeadDuck());
-  patos.add(WoodDuck());
+import '../classes/patos/MallardDuck.dart';
+import '../classes/patos/RedHeadDuck.dart';
+import '../classes/patos/RubberDuck.dart';
+import '../classes/patos/WoodDuck.dart';
+import '../models/NivelMasmorra.dart';
+import '../models/Pato.dart';
+import '../project/jogo.dart';
 
-  for (Pato pato in patos) {
-    pato.exibir();
-    pato.grasnar();
-    pato.nadar();
-    pato.voar();
-    print("");
-  }
+void main() {
+  // Crie os patos...
+  Pato patoDeBorracha = RubberDuck();
+  Pato patoDeMadeira = WoodDuck();
+  Pato patoDeCabecaVermelha = RedHeadDuck();
+  Pato patoSelvagem = MallardDuck();
+
+  // Crie a lista de patos disponíveis e a lista de níveis de masmorra...
+  List<Pato> patos = <Pato>[
+    patoDeBorracha,
+    patoDeMadeira,
+    patoDeCabecaVermelha,
+    patoSelvagem
+  ];
+
+// Crie os níveis de masmorra...
+  NivelMasmorra nivel1 = NivelMasmorra('Nível 1', 10, patos, [], []);
+  NivelMasmorra nivel2 = NivelMasmorra('Nível 2', 10, patos, [], []);
+  NivelMasmorra nivel3 = NivelMasmorra('Nível 3', 10, patos, [], []);
+
+  // Crie a lista de níveis de masmorra...
+  List<NivelMasmorra> niveis = <NivelMasmorra>[nivel1, nivel2, nivel3];
+
+  // Crie o jogo...
+  Jogo jogo = Jogo(patos, niveis);
+
+  // Inicie o jogo...
+  jogo.escolherPatos(patos);
+
+    
+
+  // mostrar jogo na tela...
+  print(jogo);
 }
 
 /*
@@ -74,9 +95,7 @@ TODO Do simulador para um embrião de jogo:
 ToDo : Implementar as regras de Dungeons & Ducks baseado no jogo Dungeons & Dragons;
 ToDo : Implementar o padrão de projeto State para salvar e restaurar o estado dos patos;
 ToDo : Implementar o padrão de projeto Decorator para adicionar as funcionalidades de luta;
-ToDo : Implementar o padrão de projeto Factory para criar os patos;
 ToDo : Implementar o padrão de projeto Strategy para definir os comportamentos de grasnar e voar;
-ToDo : Implementar o padrão de projeto Observer para notificar os patos sobre a chegada de um feitiço;
 ToDo : Implementar o padrão de projeto Command para executar os feitiços;
 ToDo : Implementar o padrão de projeto Iterator para iterar sobre os patos;
 ToDo : Implementar o padrão de projeto Composite para agrupar os patos;
@@ -87,7 +106,6 @@ ToDo : Implementar o padrão de projeto Bridge para definir a interface do jogo;
 ToDo : Implementar o padrão de projeto Proxy para proteger o jogo;
 ToDo : Implementar o padrão de projeto Flyweight para otimizar o jogo;
 ToDo : Implementar o padrão de projeto Chain of Responsibility para definir a ordem de execução dos feitiços;
-ToDo : Implementar o padrão de projeto Mediator para definir a comunicação entre os patos;
 => para cada tipo de campo de batalha, implementar um padrão de projeto diferente;
 * terrenos: floresta, montanha, lago, deserto, cidade, etc.
 * clima: chuva, neve, vento, etc.
