@@ -1,4 +1,9 @@
-import 'new_class.dart';
+
+import '../classes/MallardDuck.dart';
+import '../classes/RedHeadDuck.dart';
+import '../classes/RubberDuck.dart';
+import '../classes/WoodDuck.dart';
+import '../classes/pato.dart';
 
 void main() {
   List<Pato> patos = [];
